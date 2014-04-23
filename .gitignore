@@ -1,0 +1,15 @@
+build/*
+dist/*
+.settings/*
+.project
+
+#IntelliJ Idea IDE Settings#
+.idea/*
+*/*.iml
+out/*
+target/*
+
+#Ignore SVN Files#
+**/.svn/*
+
+.classpath
