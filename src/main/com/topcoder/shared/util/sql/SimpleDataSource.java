@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2013 TopCoder Inc., All Rights Reserved.
+ */
 package com.topcoder.shared.util.sql;
 
 import javax.sql.DataSource;
@@ -8,13 +11,30 @@ import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.util.logging.Logger;
 
+
+/**
+ * <p>
+ *     Changes for version 1.1
+ *     <ol>
+ *         <li>Add {@link #logger} field.</li>
+ *         <li>Add {@link #getParentLogger()} method to make the code compilable for JDK 7.</li>
+ *     </ol>
+ * </p>
+ *
+ * @author TCSASSEMBLER
+ * @version 1.1
+ * @since 1.0
+ */
 public class SimpleDataSource implements DataSource {
 
     private final String url;
     private final String username;
     private final String password;
 
-    private Logger logger = Logger.getLogger(SimpleDataSource.class.getSimpleName());
+    /**
+     * Logger instance.
+     */
+    private static Logger logger = Logger.getLogger(SimpleDataSource.class.getSimpleName());
 
     public SimpleDataSource(String jdbcDriverClassName, String url) throws ClassNotFoundException {
         this(jdbcDriverClassName, url, null, null);
